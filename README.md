@@ -306,15 +306,6 @@ DuckDB queries the processed Parquet files directly and writes 10 reporting tabl
 - Add model monitoring and drift detection
 - Include product categories, seasonality, and campaign response features
 
-## Acknowledgements
-
-This project is based on [customer-360-revenue-intelligence](https://github.com/PrajwalShekar22/customer-360-revenue-intelligence) by Prajwal Shekar. Please see the original repository for its license and terms of use.
-
-Data: Online Retail II, UCI Machine Learning Repository.
-
-## Author
-
-**Your Name**
 
 - GitHub: [@bhupendrayz](https://github.com/bhupendrayz)
-- LinkedIn: _add your link_
+-
