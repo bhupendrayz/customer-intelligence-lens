@@ -18,4 +18,4 @@ SELECT
     vip_flag
 FROM customer_360
 ORDER BY total_revenue DESC
-LIMIT 50;
+LIMIT 50 ;
