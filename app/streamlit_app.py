@@ -2,21 +2,21 @@
 Customer 360 Revenue Intelligence Platform — Streamlit Dashboard
 Step 12: Interactive business dashboard powered by customer_360.parquet
 
-Developer: Prajwal Gorkhar Chandrashekar
+Developer: Bhupendra yadav
 Role: Data Analyst | Business Analytics | Machine Learning | Data Engineering
-GitHub: https://github.com/PrajwalShekar22
-LinkedIn: https://www.linkedin.com/in/prajwalshekar
-Portfolio: https://www.datascienceportfol.io/pgc
-Email: prajwalshekar22@gmail.com
+GitHub: https://github.com/bhupendrayz
+LinkedIn: https://www.linkedin.com/in/bhupendra-yadav-02b8471a0/
+Portfolio: https://github.com/bhupendrayz
+Email: yadavbhupendr7972@gmail.com
 """
 
 # ── Developer contact info (single source of truth) ──────────────────────────
-DEV_NAME      = "Prajwal Gorkhar Chandrashekar"
+DEV_NAME      = "Bhupendra yadav"
 DEV_ROLE      = "Data Analyst | Business Analytics | Machine Learning | Data Engineering"
-DEV_GITHUB    = "https://github.com/PrajwalShekar22"
-DEV_LINKEDIN  = "https://www.linkedin.com/in/prajwalshekar"
-DEV_PORTFOLIO = "https://www.datascienceportfol.io/pgc"
-DEV_EMAIL     = "prajwalshekar22@gmail.com"
+DEV_GITHUB    = "https://github.com/bhupendrayz"
+DEV_LINKEDIN  = "https://www.linkedin.com/in/bhupendra-yadav-02b8471a0/"
+DEV_PORTFOLIO = "https://github.com/bhupendrayz"
+DEV_EMAIL     = "yadavbhupendr7972@gmail.com"
 
 import pandas as pd
 import numpy as np
