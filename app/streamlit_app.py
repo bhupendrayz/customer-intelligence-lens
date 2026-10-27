@@ -3,7 +3,7 @@ Customer 360 Revenue Intelligence Platform — Streamlit Dashboard
 Step 12: Interactive business dashboard powered by customer_360.parquet
 
 Developer: Bhupendra yadav
-Role: Data Analyst | Business Analytics | Machine Learning | Data Engineering
+Role: Data Analyst  | Machine Learning | Data Engineering | Artificial intelligence | Business Analytics
 GitHub: https://github.com/bhupendrayz
 LinkedIn: https://www.linkedin.com/in/bhupendra-yadav-02b8471a0/
 Portfolio: https://github.com/bhupendrayz
