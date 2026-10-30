@@ -19,7 +19,7 @@ DEV_GITHUB    = "https://github.com/bhupendrayz"
 DEV_LINKEDIN  = "https://www.linkedin.com/in/bhupendra-yadav-02b8471a0/"
 DEV_EMAIL     = "yadavbhupendr7972@gmail.com"
 
-st.set_page_config(page_title="Customer 360", page_icon="🔍📈", layout="wide",
+st.set_page_config(page_title="Customer 360", page_icon="📈", layout="wide",
                    initial_sidebar_state="expanded")
 inject_theme()
 TEMPLATE = register_plotly_template()
@@ -141,10 +141,10 @@ with st.sidebar:
       </div>
     </div>""", unsafe_allow_html=True)
 
-# ── Top bar: page title (left) + filter popover (right) ──────────────────────
+# ── Top bar: page title (left) + filter popover (right) ────────────
 top_l, top_r = st.columns([3, 1])
 with top_r:
-    with st.popover("Filters", use_container_width=True):
+    with st.popover("Filters", use_container_width=False):
         if st.button("Reset all filters", use_container_width=True):
             for k in [k for k in st.session_state if k.startswith("flt_")]:
                 del st.session_state[k]
