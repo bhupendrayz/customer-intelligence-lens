@@ -19,7 +19,7 @@ DEV_GITHUB    = "https://github.com/bhupendrayz"
 DEV_LINKEDIN  = "https://www.linkedin.com/in/bhupendra-yadav-02b8471a0/"
 DEV_EMAIL     = "yadavbhupendr7972@gmail.com"
 
-st.set_page_config(page_title="Customer 360", page_icon="\U0001F4C8", layout="wide",
+st.set_page_config(page_title="Customer 360", page_icon="📊", layout="wide",
                    initial_sidebar_state="expanded")
 inject_theme()
 TEMPLATE = register_plotly_template()
@@ -150,37 +150,27 @@ with st.sidebar:
       </div>
     </div>""", unsafe_allow_html=True)
 
-# ── Top bar: page title (left) + filters and deploy actions (right) ──────────
-top_l, top_r = st.columns([5, 2])
+# ── Top bar: page title (left) + filter popover (right) ──────────────────────
+top_l, top_r = st.columns([3, 1])
 with top_r:
-    filter_col, deploy_col = st.columns(2)
-    with filter_col:
-        with st.popover("Filters", icon=":material/filter_list:", use_container_width=True):
-            if st.button("Reset all filters", use_container_width=True):
-                for k in [k for k in st.session_state if k.startswith("flt_")]:
-                    del st.session_state[k]
-                st.rerun()
-            a, b = st.columns(2)
-            with a:
-                sel_health  = st.multiselect("Health tier", sorted(df_all["health_tier"].dropna().unique()), key="flt_health")
-                sel_churn   = st.multiselect("Churn risk", sorted(df_all["churn_risk_tier"].dropna().unique()), key="flt_churn")
-                sel_value   = st.multiselect("Value tier", sorted(df_all["customer_value_tier"].dropna().unique()), key="flt_value")
-            with b:
-                sel_rfm     = st.multiselect("RFM segment", sorted(df_all["rfm_segment"].dropna().unique()), key="flt_rfm")
-                sel_prio    = st.multiselect("Action priority", sorted(df_all["action_priority"].dropna().unique()), key="flt_prio")
-                sel_country = st.multiselect("Country", sorted(df_all["country_mode"].dropna().unique()), key="flt_country")
-            scored_label = st.selectbox("Model status", ["All customers", "Scored only", "Not scored only"], key="flt_scored")
-            r_lo, r_hi = float(df_all["total_revenue"].min()), float(df_all["total_revenue"].max())
-            rev_range = st.slider("Revenue (£)", r_lo, r_hi, (r_lo, r_hi), format="£%.0f", key="flt_rev")
-            cp_range = st.slider("Churn probability (scored only)", 0.0, 1.0, (0.0, 1.0), 0.01, key="flt_cp")
-    with deploy_col:
-        st.link_button(
-            "Deploy",
-            "https://share.streamlit.io/deploy?repository=bhupendrayz%2Fcustomer-intelligence-lens&branch=main&mainModule=app%2Fstreamlit_app.py",
-            icon=":material/rocket_launch:",
-            type="primary",
-            use_container_width=True,
-        )
+    with st.popover("Filters", use_container_width=True):
+        if st.button("Reset all filters", use_container_width=True):
+            for k in [k for k in st.session_state if k.startswith("flt_")]:
+                del st.session_state[k]
+            st.rerun()
+        a, b = st.columns(2)
+        with a:
+            sel_health  = st.multiselect("Health tier", sorted(df_all["health_tier"].dropna().unique()), key="flt_health")
+            sel_churn   = st.multiselect("Churn risk", sorted(df_all["churn_risk_tier"].dropna().unique()), key="flt_churn")
+            sel_value   = st.multiselect("Value tier", sorted(df_all["customer_value_tier"].dropna().unique()), key="flt_value")
+        with b:
+            sel_rfm     = st.multiselect("RFM segment", sorted(df_all["rfm_segment"].dropna().unique()), key="flt_rfm")
+            sel_prio    = st.multiselect("Action priority", sorted(df_all["action_priority"].dropna().unique()), key="flt_prio")
+            sel_country = st.multiselect("Country", sorted(df_all["country_mode"].dropna().unique()), key="flt_country")
+        scored_label = st.selectbox("Model status", ["All customers", "Scored only", "Not scored only"], key="flt_scored")
+        r_lo, r_hi = float(df_all["total_revenue"].min()), float(df_all["total_revenue"].max())
+        rev_range = st.slider("Revenue (£)", r_lo, r_hi, (r_lo, r_hi), format="£%.0f", key="flt_rev")
+        cp_range = st.slider("Churn probability (scored only)", 0.0, 1.0, (0.0, 1.0), 0.01, key="flt_cp")
 
 df = df_all.copy()
 for col, sel in [("health_tier", sel_health), ("rfm_segment", sel_rfm), ("churn_risk_tier", sel_churn),

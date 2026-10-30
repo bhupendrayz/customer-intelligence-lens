@@ -308,4 +308,3 @@ DuckDB queries the processed Parquet files directly and writes 10 reporting tabl
 
 
 - GitHub: [@bhupendrayz](https://github.com/bhupendrayz)
--
